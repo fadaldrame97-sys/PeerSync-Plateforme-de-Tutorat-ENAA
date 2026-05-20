@@ -4,18 +4,18 @@
 class DB {
     private static $connection= null;
 
-public static function getConnction () :PDO{
+    public static function getConnction () :PDO{
 
 
-if(self::$connection==null){
+        if(self::$connection==null){
 
-//crer la connection 
-self::$connection= new PDO("myqsl:host=localhost;dbname=peerenaa","root","");
-//cofigurer le PDO en=n cas d'erreur
-self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
+            //crer la connection 
+            self::$connection= new PDO("myqsl:host=localhost;dbname=peerenaa","root","");
+            //cofigurer le PDO en=n cas d'erreur
+            self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
 
-return self::$connection;
+        return self::$connection;
 
-} 
+    } 
 } 

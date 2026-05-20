@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 require_once "../config/db.php";
 
 abstract class User{
@@ -10,7 +10,7 @@ abstract class User{
        $this->db=DB::getConnection();
      
        }
-   public function getById($id){
+   public function getById($id) : ?array{
 
       $sql=" Select* from users where id=?";
       $stmt=$this->db->prepare($sql);

@@ -9,9 +9,12 @@ public static function getConnction (){
 
 if(self::$connection==null){
 
+//crer la connection 
 self::$connection= new PDO("myqsl:host=localhost;dbname=peerenaa","root","");
-
+//cofigurer le PDO en=n cas d'erreur
+self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
+
 
 
 } 

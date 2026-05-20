@@ -6,14 +6,13 @@ class DB {
 
 public static function getConnction (){
 
+
 if(self::$connection==null){
 
-
-
-}
+self::$connection= new PDO("myqsl:host=localhost;dbname=peerenaa","root","");
 
 }
 
 
-
+} 
 } 

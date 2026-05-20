@@ -1,22 +1,19 @@
 <?php
 declare(strict_types=1);
-require_once "../config/db.php";
 
-abstract class User{
-   protected PDO $db;
+abstract class User {
+    protected int $id;
+    protected string $name;
 
-   public function __construct()
-       {
-       $this->db=DB::getConnection();
-     
-       }
-   public function getById($id) : ?array{
+    public function getId(): int {
+        return $this->id;
+    }
 
-      $sql=" Select* from users where id=?";
-      $stmt=$this->db->prepare($sql);
-      $stmt->execute([$id]);
-      return $stmt->fetch(PDO::FETCH_ASSOC );
+    public function getName(): string {
+        return $this->name;
+    }
 
-   }   
-
+    public function setName(string $name): void {
+        $this->name = $name;
+    }
 }

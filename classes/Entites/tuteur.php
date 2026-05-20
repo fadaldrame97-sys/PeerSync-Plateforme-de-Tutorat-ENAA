@@ -10,6 +10,9 @@ class Apprenant extends User{
 
     }
     public function laisserAvis(int $demandeId, int $note):void{
+        if($note<1|| $note>5){
+            throw new Exception("Note est invalide");
+        }
 
     }
 }

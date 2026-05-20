@@ -4,7 +4,7 @@
 class DB {
     private static $connection= null;
 
-public static function getConnction (){
+public static function getConnction () :PDO{
 
 
 if(self::$connection==null){
@@ -15,7 +15,7 @@ self::$connection= new PDO("myqsl:host=localhost;dbname=peerenaa","root","");
 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 
-
+return self::$connection;
 
 } 
 } 

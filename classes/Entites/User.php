@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once "../config/db.php";
 
 abstract class User{
-   protected $db;
+   protected PDO $db;
 
    public function __construct()
        {

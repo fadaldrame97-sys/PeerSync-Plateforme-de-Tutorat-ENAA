@@ -10,4 +10,8 @@ class DemandeAideRpository{
     {
         $this->db=$db;
     }
+
+    public function creat(DemandeAide $demandeAide):bool{
+
+    }
 }

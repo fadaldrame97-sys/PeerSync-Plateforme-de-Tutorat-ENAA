@@ -20,7 +20,12 @@ class UserRepository {
 
         if (!$data) return null;
 
+        if($data['role']==='tuteur'){
+            return new Tuteur((int)$data['id'],$data['name']);
+        }
+        return new Apprenant((int)$data['id'],$data['name']);
+
        
-        return null;
+      
     }
 }    

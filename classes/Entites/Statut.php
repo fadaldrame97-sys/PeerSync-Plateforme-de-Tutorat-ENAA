@@ -2,8 +2,8 @@
 declare(strict_types=1);
 
 enum Statut:string{
-    case PENDING="pendig";
+    case PENDING = "pending";
     case ASSIGNED="assigned";
-    case RESOLVED="résolu";
+    case RESOLVED = "resolved";
 
 }

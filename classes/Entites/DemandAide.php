@@ -15,15 +15,15 @@ class DemandeAide{
         int $id,
         string $titre,
         string $description,
-        string $statut,
+        statut $statut,
         int $apprenant_id,
-        int $tuteur_id,
+        ?int $tuteur_id = null
 
      ){
          $this->id = $id;
          $this->titre = $titre;
          $this->description=$description;
-         $this->Statut=$statut;
+         $this->statut=$statut;
          $this->apprenant_id=$apprenant_id;
          $this->tuteur_id=$tuteur_id;
      }
@@ -32,15 +32,15 @@ class DemandeAide{
             throw new Exception("Impossible de s'assigner soit-meme");
         }
         $this->tuteur_id=$tuteur_id;
-       $this->statut = Statut::RESOLVED;
+       $this->statut = Statut::ASSIGNED;
 
      }
 
      public function resolu():void{
-        $this->Statut="Résolu";
+        $this->statut = Statut::RESOLVED;
      }
 
-     public function getStatut(): string {
-        return $this->Statut;
+     public function getStatut(): Statut {
+        return $this->statut;
      }
 }

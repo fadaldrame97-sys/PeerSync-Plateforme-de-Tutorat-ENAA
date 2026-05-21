@@ -15,5 +15,8 @@ $repository = new DemandeAideRepository($db);
 $message="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    
+    $titre = $_POST['titre'];
+    $description = $_POST['description'];
+    $demande = new DemandeAide( 0, $titre, $description, Statut::PENDING, 1, null );
+    $success = $repository->create($demande);
 }

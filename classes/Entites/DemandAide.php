@@ -26,5 +26,10 @@ class DemandAide{
          $this->apprenant_id=$apprenant_id;
          $this->tuteur_id=$tuteur_id;
      }
-     
+     public function assignTo(int $tuteur_id){
+        if ($this->apprenant_id==$tuteur_id){
+            throw new Exception("Impossible de s'assigner soit-meme");
+        }
+
+     }
 }

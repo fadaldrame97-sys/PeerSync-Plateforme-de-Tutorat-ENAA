@@ -38,4 +38,8 @@ class DemandAide{
      public function resolu():void{
         $this->statut="Résolu";
      }
+
+     public function getStatut(): string {
+        return $this->statut;
+     }
 }

@@ -63,4 +63,12 @@ class DemandeAideRpository{
         }
         return $demandeAide;
     }
+
+    public function update(DemandeAide $demandeAide ):bool{
+        $sql= "UPDATE demandeAide SET statut=?,
+               tuteur_id=?
+               where id=?";
+        $stmt=$this->db->prepare($sql);
+        return $stmt->execute([$demandeAide->getStatut()->value,$demandeAide->getTiteur_id(),$demandeAide->getId()]);
+    }
 }

@@ -33,7 +33,13 @@ class DemandeAideRpository{
                 where id=?";
         $stmt= $this->db->prepare($sql);
         $stmt->execute([$di]);  
-        $data=$stmt->fetch(PDO::FETCH_ASSOC);     
+        $data=$stmt->fetch(PDO::FETCH_ASSOC); 
+        
+        if(!$data) return null;
+        return new DemandeAide(
+            (int)$data['id'],$data['titre'],$data['description'],Statut::from($data['statut']),
+            (int)$data['apprenant_id'],$data['tuteur_id'] ?(int)$data['tuteur_id'] :null
+        );
 
     }
 }

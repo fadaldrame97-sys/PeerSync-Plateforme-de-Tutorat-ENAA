@@ -17,6 +17,14 @@ class DemandeAideRpository{
             (titre, description, statut, apprenant_id, tuteur_id)
             VALUES (?, ?, ?, ?, ?)
             ";
+        $stmt=$this->db->prepare($sql);
+            return $stmt->execute([
+                  $demandeAide->getTitre(),
+                  $demandeAide->getDescrption(),
+                  $demandeAide->getStatut()->value,
+                  $demandeAide->getApprenant_id(),
+                  $demandeAide->getTiteur_id()
+              ]) ;   
 
     }
 }

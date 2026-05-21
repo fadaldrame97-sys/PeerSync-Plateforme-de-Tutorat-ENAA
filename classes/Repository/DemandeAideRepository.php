@@ -64,6 +64,11 @@ class DemandeAideRepository{
         return $demandeAide;
     }
 
+    public function findALL():array{
+        
+
+    }
+
     public function update(DemandeAide $demandeAide ):bool{
         $sql= "UPDATE demandeAide SET statut=?,
                tuteur_id=?
@@ -71,4 +76,5 @@ class DemandeAideRepository{
         $stmt=$this->db->prepare($sql);
         return $stmt->execute([$demandeAide->getStatut()->value,$demandeAide->getTiteur_id(),$demandeAide->getId()]);
     }
+
 }

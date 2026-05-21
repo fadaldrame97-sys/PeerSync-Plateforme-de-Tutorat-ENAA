@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-require_once'../Entites/DemandAide.php';
-require_once'../Entites/Statut.php';
+require_once'../Entities/DemandAide.php';
+require_once'../Entities/Statut.php';
 
-class DemandeAideRpository{
+class DemandeAideRepository{
     private PDO $db;
 
     public function __construct(PDO $db)
@@ -32,7 +32,7 @@ class DemandeAideRpository{
                 FROM demandeAide
                 where id=?";
         $stmt= $this->db->prepare($sql);
-        $stmt->execute([$di]);  
+        $stmt->execute([$id]);  
         $data=$stmt->fetch(PDO::FETCH_ASSOC); 
         
         if(!$data) return null;

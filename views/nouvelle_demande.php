@@ -11,3 +11,5 @@ require_once "../Repository/DemandeAideRepository.php";
 $db = DB::getConnection();
 
 $repository = new DemandeAideRepository($db);
+
+$message="";

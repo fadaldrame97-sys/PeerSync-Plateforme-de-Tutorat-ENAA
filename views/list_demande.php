@@ -23,7 +23,7 @@ $demandes = $repository->findAll();
 </head>
 <body>
     <h1>Liste des demandes</h1>
-    <?php foreach($demandes as $demandes):?>
+    <?php foreach($demandes as $demande):?>
         <div>
            <h3><?= $demande->getTitre() ?></h3>
 

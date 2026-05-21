@@ -65,7 +65,7 @@ class DemandeAideRepository{
     }
 
     public function findALL():array{
-        
+            $sql = "SELECT * FROM demandeAide";
 
     }
 

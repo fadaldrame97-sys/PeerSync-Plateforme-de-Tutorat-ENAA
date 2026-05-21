@@ -7,7 +7,7 @@ class DemandeAide{
     private string $titre;
 
     private string $description;
-    private statut $statut;
+    private Statut $statut;
     private int $apprenant_id;
     private ? int $tuteur_id;
 
@@ -23,7 +23,7 @@ class DemandeAide{
          $this->id = $id;
          $this->titre = $titre;
          $this->description=$description;
-         $this->statut=$statut;
+         $this->Statut=$statut;
          $this->apprenant_id=$apprenant_id;
          $this->tuteur_id=$tuteur_id;
      }
@@ -37,10 +37,10 @@ class DemandeAide{
      }
 
      public function resolu():void{
-        $this->statut="Résolu";
+        $this->Statut="Résolu";
      }
 
      public function getStatut(): string {
-        return $this->statut;
+        return $this->Statut;
      }
 }

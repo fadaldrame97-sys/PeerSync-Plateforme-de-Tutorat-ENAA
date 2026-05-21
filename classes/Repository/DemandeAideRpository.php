@@ -48,8 +48,19 @@ class DemandeAideRpository{
         $sql = "
             SELECT id, titre, description, statut,
                    apprenant_id, tuteur_id
-            FROM demandes
+            FROM demandeAide
             WHERE statut = ?
-        ";
+            ";
+        $stmt=$this->db->prepare($sql);
+        $stmt->execute([Statut::PENDING->value] );
+        
+        $demandeAide=[];
+        while ($data=$stmt->fetch(PDO::FETCH_ASSOC)){
+            $demandeAide[]=new DemandeAide(
+               (int)$data['id'],$data['titre'],$data['description'],Statut::from($data['statut']),
+            (int)$data['apprenant_id'],$data['tuteur_id'] ?(int)$data['tuteur_id'] :null
+            );
+        }
+        return $demandeAide;
     }
 }

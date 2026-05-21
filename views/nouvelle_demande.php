@@ -19,4 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $description = $_POST['description'];
     $demande = new DemandeAide( 0, $titre, $description, Statut::PENDING, 1, null );
     $success = $repository->create($demande);
+
+    if ($success) {
+        $message = "Demande créée avec succès";
+      }
+     else {
+        $message = "Erreur lors de la création";
+      }
 }
+
+?>

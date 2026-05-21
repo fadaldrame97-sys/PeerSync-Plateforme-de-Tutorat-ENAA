@@ -13,3 +13,7 @@ $db = DB::getConnection();
 $repository = new DemandeAideRepository($db);
 
 $message="";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+}

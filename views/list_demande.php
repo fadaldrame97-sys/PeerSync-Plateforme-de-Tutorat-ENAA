@@ -43,6 +43,17 @@ $demandes = $repository->findAll();
             ">
                 <?= $demande->getStatut()->value ?>
             </span>
+            <div class="mt-4 flex gap-2">
+
+                <!-- Bouton accepter -->
+               <a href="accepter_demande.php?id=<?= $demande->getId() ?>"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Accepter</a>
+
+                <!-- Bouton résoudre -->
+               <a href="resoudre_demande.php?id=<?= $demande->getId() ?>"
+               class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"> Résoudre</a>
+
+            </div>
 
         </div>
     </div>

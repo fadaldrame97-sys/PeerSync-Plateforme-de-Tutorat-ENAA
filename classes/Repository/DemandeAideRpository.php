@@ -4,10 +4,10 @@ require_once'../Entites/DemandAide.php';
 require_once'../Entites/Statut.php';
 
 class DemandeAideRpository{
-    private PDO $pdo;
+    private PDO $db;
 
-    public function __construct(PDO $pdo)
+    public function __construct(PDO $db)
     {
-        throw new \Exception('Not implemented');
+        $this->db=$db;
     }
 }

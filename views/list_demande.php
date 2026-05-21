@@ -24,6 +24,15 @@ $demandes = $repository->findAll();
 <body>
     <h1>Liste des demandes</h1>
     <?php foreach($demandes as $demandes):?>
+        <div>
+           <h3><?= $demande->getTitre() ?></h3>
+
+           <p><?= $demande->getDescription() ?></p>
+
+           <strong>
+            <?= $demande->getStatut()->value ?>
+           </strong>
+        </div>
     
     <?php endforeach ?>    
 </body>

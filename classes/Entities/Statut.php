@@ -2,8 +2,9 @@
 declare(strict_types=1);
 
 enum Statut:string{
-    case PENDING = "pending";
-    case ASSIGNED="assigned";
-    case RESOLVED = "resolved";
+    case OUVERTE = 'ouverte';
+    case ACCEPTEE = 'acceptee';
+    case RESOLUE = 'resolue';
+
 
 }

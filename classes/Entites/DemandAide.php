@@ -33,7 +33,7 @@ class DemandeAide{
      public function getTitre(): string{
         return $this->titre;
      }
-     public function getDescrption(): string{
+     public function getDescription(): string{
         return $this->description;
      }
      public function getApprenant_id(): int{

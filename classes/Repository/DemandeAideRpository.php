@@ -11,7 +11,7 @@ class DemandeAideRpository{
         $this->db=$db;
     }
 
-    public function creat(DemandeAide $demandeAide):bool{
+    public function create(DemandeAide $demandeAide):bool{
         $sql = "
             INSERT INTO demandeAide
             (titre, description, statut, apprenant_id, tuteur_id)
@@ -20,7 +20,7 @@ class DemandeAideRpository{
         $stmt=$this->db->prepare($sql);
             return $stmt->execute([
                   $demandeAide->getTitre(),
-                  $demandeAide->getDescrption(),
+                  $demandeAide->getDescription(),
                   $demandeAide->getStatut()->value,
                   $demandeAide->getApprenant_id(),
                   $demandeAide->getTiteur_id()

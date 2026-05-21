@@ -27,7 +27,7 @@ class DemandeAideRpository{
               ]) ;   
 
     }
-    public function findById(int $di):?DemandeAide{
+    public function findById(int $id):?DemandeAide{
         $sql= " SELECT id, titre, description, statut,apprenant_id,tuteur_id
                 FROM demandeAide
                 where id=?";

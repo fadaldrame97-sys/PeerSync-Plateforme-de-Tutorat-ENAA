@@ -52,7 +52,7 @@ class DemandeAideRepository{
             WHERE statut = ?
             ";
         $stmt=$this->db->prepare($sql);
-        $stmt->execute([Statut::PENDING->value] );
+        $stmt->execute([Statut::OUVERTE->value] );
         
         $demandeAide=[];
         while ($data=$stmt->fetch(PDO::FETCH_ASSOC)){

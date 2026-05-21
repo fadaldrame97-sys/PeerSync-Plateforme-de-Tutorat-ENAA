@@ -2,6 +2,12 @@
 require_once"User.php";
 
 class Apprenant extends User{
+     public function __construct(
+        int $id,
+        string $name
+    ) {
+        parent::__construct($id, $name);
+    }
     public function creerDemande(string $titre, string $description, int $competenceId){
 
 

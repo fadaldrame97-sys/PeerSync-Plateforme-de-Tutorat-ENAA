@@ -38,6 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>créer une demande</title>
 </head>
 <body>
-    
+    <h1>Créer une demande d'aide</h1>
+
+    <p><?= $message ?></p>
+    <form method="POST">
+        <input type="text" name="titre" placeholder="titre" required>
+        <br><br>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <br><br>
+        <button type="submit">Envoyer</button>
+    </form>
 </body>
 </html>

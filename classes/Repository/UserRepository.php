@@ -1,8 +1,8 @@
 <?php
 
-require_once "../Entities/User.php";
-require_once "../Entities/Apprenant.php";
-require_once "../Entities/Tuteur.php";
+require_once "../classes/Entities/User.php";
+require_once "../classes/Entities/Apprenant.php";
+require_once "../classes/Entities/Tuteur.php";
 
 class UserRepository {
     private PDO $db;

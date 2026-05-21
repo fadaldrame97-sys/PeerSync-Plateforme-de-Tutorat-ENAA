@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once'../Entities/DemandAide.php';
-require_once'../Entities/Statut.php';
+require_once'../classes/Entities/DemandeAide.php';
+require_once'../classes/Entities/Statut.php';
 
 class DemandeAideRepository{
     private PDO $db;

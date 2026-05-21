@@ -67,6 +67,27 @@ class DemandeAideRepository{
     public function findALL():array{
             $sql = "SELECT * FROM demandeAide";
 
+    $stmt = $this->db->query($sql);
+
+    $demandes = [];
+
+    while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        $demandes[] = new DemandeAide(
+            (int)$data['id'],
+            $data['titre'],
+            $data['description'],
+            Statut::from($data['statut']),
+            (int)$data['apprenant_id'],
+            $data['tuteur_id'] !== null
+                ? (int)$data['tuteur_id']
+                : null
+        );
+    }
+
+    return $demandes;
+
+
     }
 
     public function update(DemandeAide $demandeAide ):bool{

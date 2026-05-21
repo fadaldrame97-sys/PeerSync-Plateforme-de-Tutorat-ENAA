@@ -42,4 +42,14 @@ class DemandeAideRpository{
         );
 
     }
+
+    public function findPending(): array
+    {
+        $sql = "
+            SELECT id, titre, description, statut,
+                   apprenant_id, tuteur_id
+            FROM demandes
+            WHERE statut = ?
+        ";
+    }
 }

@@ -12,6 +12,11 @@ class DemandeAideRpository{
     }
 
     public function creat(DemandeAide $demandeAide):bool{
+        $sql = "
+            INSERT INTO demandeAide
+            (titre, description, statut, apprenant_id, tuteur_id)
+            VALUES (?, ?, ?, ?, ?)
+            ";
 
     }
 }

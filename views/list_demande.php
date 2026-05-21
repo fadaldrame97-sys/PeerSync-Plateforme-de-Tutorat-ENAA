@@ -25,17 +25,27 @@ $demandes = $repository->findAll();
 
 </head>
 <body>
-    <h1>Liste des demandes</h1>
+    <h1 class="text-2xl font-bold mb-6">Liste des demandes</h1>
+    <div class="grid gap-4">
+
     <?php foreach($demandes as $demande):?>
-        <div>
-           <h3><?= $demande->getTitre() ?></h3>
+        <div class="bg-white shadow-md rounded-xl p-4 border border-gray-200">>
+           <h3 class="text-lg font-semibold text-gray-800"><?= $demande->getTitre() ?></h3>
 
-           <p><?= $demande->getDescription() ?></p>
+           <p class="text-gray-600 mt-2"><?= $demande->getDescription() ?></p>
 
-           <strong>
-            <?= $demande->getStatut()->value ?>
-           </strong>
+           <div class="mt-3 flex justify-between items-center">
+
+            <span class="px-3 py-1 text-sm rounded-full 
+                <?= $demande->getStatut()->value === 'ouverte' ? 'bg-yellow-100 text-yellow-700' : '' ?>
+                <?= $demande->getStatut()->value === 'acceptee' ? 'bg-blue-100 text-blue-700' : '' ?>
+                <?= $demande->getStatut()->value === 'resolue' ? 'bg-green-100 text-green-700' : '' ?>
+            ">
+                <?= $demande->getStatut()->value ?>
+            </span>
+
         </div>
+    </div>
     
     <?php endforeach ?>    
 </body>

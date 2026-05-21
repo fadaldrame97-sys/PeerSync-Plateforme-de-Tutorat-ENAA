@@ -19,6 +19,12 @@ class DemandAide{
         int $tuteur_id,
 
      ){
-        
+         $this->id = $id;
+         $this->titre = $titre;
+         $this->description=$description;
+         $this->statut=$statut;
+         $this->apprenant_id=$apprenant_id;
+         $this->tuteur_id=$tuteur_id;
      }
+     
 }

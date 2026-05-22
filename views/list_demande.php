@@ -19,7 +19,6 @@ $demandes = $repository->findAll();
 
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +74,7 @@ $demandes = $repository->findAll();
         </div>
     </div>
     
-    <?php endforeach ?>    
+    <?php endforeach ?>   
+   
 </body>
 </html>

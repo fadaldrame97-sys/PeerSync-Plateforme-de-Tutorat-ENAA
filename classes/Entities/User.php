@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 abstract class User {
     protected int $id;
-    protected string $name;
+    protected string $nom;
 
-    public function __construct( int $id, string $name)
+    public function __construct( int $id, string $nom)
     {
        $this->id=$id;
-       $this->name=$name;
+       $this->nom=$nom;
     }
 
     public function getId(): int {
@@ -16,10 +16,10 @@ abstract class User {
     }
 
     public function getName(): string {
-        return $this->name;
+        return $this->nom;
     }
 
-    public function setName(string $name): void {
-        $this->name = $name;
+    public function setName(string $nom): void {
+        $this->nom = $nom;
     }
 }

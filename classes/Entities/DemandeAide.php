@@ -43,20 +43,23 @@ class DemandeAide{
         return $this->tuteur_id;
 
      }
-     public function assignTo(int $tuteur_id):void{
-        if ($this->apprenant_id==$tuteur_id){
-            throw new Exception("Impossible de s'assigner soit-meme");
+     public function assignTo(Tuteur $tuteur): void
+     {
+       if ($this->apprenant_id === $tuteur->getId()) {
+        throw new Exception("Impossible de s'assigner soi-même");
+         }
+
+           $this->tuteur_id = $tuteur->getId();
+
+           $this->statut = Statut::ACCEPTEE;
+     }
+
+    public function resolu(): void
+    {
+       if ($this->statut !== Statut::ACCEPTEE) {
+        throw new Exception("La demande doit être acceptée avant d'être résolue");
         }
-        $this->tuteur_id=$tuteur_id;
-       $this->statut = Statut::ACCEPTEE;
 
-     }
-
-     public function resolu():void{
-        $this->statut = Statut::RESOLUE;
-     }
-
-     public function getStatut(): Statut {
-        return $this->statut;
-     }
+    $this->statut = Statut::RESOLUE;
+    }
 }

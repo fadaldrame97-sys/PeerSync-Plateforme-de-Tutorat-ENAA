@@ -16,6 +16,22 @@ $stmt = $db->prepare($sql);
 
 $stmt->execute([$email]);
 
+$user=$stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($user && $user['mot_de_passe'] === $password) {
+
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['role'] = $user['role'];
+    $_SESSION['nom'] = $user['nom'];
+
+    header("Location: list_demande.php");
+    exit;
+
+} else {
+
+    echo "Email ou mot de passe incorrect";
+}
+
 
 ?>
 <!DOCTYPE html>

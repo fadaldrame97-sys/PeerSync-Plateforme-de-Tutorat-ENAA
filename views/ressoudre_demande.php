@@ -5,3 +5,4 @@ require_once "../classes/Entities/Statut.php";
 $db= DB::getConnection();
 $repo= new DemandeAideRepository($db);
 
+$id=(int) $_GET['id'];

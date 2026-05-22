@@ -30,4 +30,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $competenceId
     );
 
-}   
+        $success = $pointFortRepo->add($pointFort);
+
+    if($success){
+        $message = "Compétence forte ajoutée";
+    } else {
+        $message = "Erreur";
+    }
+}
+?>
+
+   

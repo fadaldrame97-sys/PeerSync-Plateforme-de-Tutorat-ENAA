@@ -15,3 +15,25 @@ $pointFaibleRepo = new PointFaibleRepository($db);
 $competenceRepo = new CompetenceRepository($db);
 
 $competences = $competenceRepo->findAll();
+
+$message = "";
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $competenceId = (int)$_POST['competence_id'];
+
+    $pointFaible = new PointFaible(
+        0,
+        $_SESSION['user_id'],
+        $competenceId
+    );
+
+    $success = $pointFaibleRepo->add($pointFaible);
+
+    if($success){
+        $message = "Point faible ajouté";
+    } else {
+        $message = "Erreur";
+    }
+}
+?>

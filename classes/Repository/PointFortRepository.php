@@ -25,5 +25,29 @@ class PointFortRepository
             $pointFort->getCompetenceID()
         ]);
     }
+        public function findByUser(int $userId): array
+    {
+        $sql = "
+            SELECT * FROM point_forts
+            WHERE user_id = ?
+        ";
 
- }   
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute([$userId]);
+
+        $points = [];
+
+        while($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $points[] = new PointFort(
+                (int)$data['id'],
+                (int)$data['user_id'],
+                (int)$data['competence_id']
+            );
+        }
+
+        return $points;
+    }
+}
+   

@@ -5,34 +5,38 @@ session_start();
 
 require_once "../config/db.php";
 
-$db = DB::getConnection();
+$message = "";
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-$sql = "SELECT * FROM users WHERE email = ?";
+  $db = DB::getConnection();
 
-$stmt = $db->prepare($sql);
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-$stmt->execute([$email]);
+  $sql = "SELECT * FROM users WHERE email = ?";
 
-$user=$stmt->fetch(PDO::FETCH_ASSOC);
+  $stmt = $db->prepare($sql);
 
-if ($user && $user['mot_de_passe'] === $password) {
+  $stmt->execute([$email]);
 
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['role'] = $user['role'];
-    $_SESSION['nom'] = $user['nom'];
+  $user=$stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($user && $user['mot_de_passe'] === $password) {
+
+     $_SESSION['user_id'] = $user['id'];
+     $_SESSION['role'] = $user['role'];
+     $_SESSION['nom'] = $user['nom'];
 
     header("Location: list_demande.php");
     exit;
 
-} else {
+ }else {
 
-    echo "Email ou mot de passe incorrect";
+    $message="Email ou mot de passe incorrect";
+ }
+
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

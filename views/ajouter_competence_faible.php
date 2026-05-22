@@ -37,3 +37,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+<form method="POST">
+
+    <select name="competence_id">
+
+        <?php foreach($competences as $competence): ?>
+
+            <option value="<?= $competence->getId() ?>">
+                <?= $competence->getNom() ?>
+            </option>
+
+        <?php endforeach; ?>
+
+    </select>
+
+    <button type="submit">
+        Ajouter
+    </button>
+
+</form>

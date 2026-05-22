@@ -40,4 +40,37 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-   
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter compétence forte</title>
+</head>
+<body>
+
+<h1>Ajouter une compétence forte</h1>
+
+<p><?= $message ?></p>
+
+<form method="POST">
+
+    <select name="competence_id">
+
+        <?php foreach($competences as $competence): ?>
+
+            <option value="<?= $competence->getId() ?>">
+                <?= $competence->getNom() ?>
+            </option>
+
+        <?php endforeach; ?>
+
+    </select>
+
+    <button type="submit">
+        Ajouter
+    </button>
+
+</form>
+
+</body>
+</html>   

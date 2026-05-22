@@ -11,4 +11,19 @@ class PointFortRepository
         $this->db = $db;
     }
 
+      public function add(PointFort $pointFort): bool
+    {
+        $sql = "
+            INSERT INTO point_forts(user_id, competence_id)
+            VALUES (?, ?)
+        ";
+
+        $stmt = $this->db->prepare($sql);
+
+        return $stmt->execute([
+            $pointFort->getUserID(),
+            $pointFort->getCompetenceID()
+        ]);
+    }
+
  }   

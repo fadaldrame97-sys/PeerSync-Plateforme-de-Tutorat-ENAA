@@ -18,3 +18,16 @@ $competenceRepo = new CompetenceRepository($db);
 $competences = $competenceRepo->findAll();
 
 $message = "";
+
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $competenceId = (int)$_POST['competence_id'];
+
+    $pointFort = new PointFort(
+        0,
+        $_SESSION['user_id'],
+        $competenceId
+    );
+
+}   

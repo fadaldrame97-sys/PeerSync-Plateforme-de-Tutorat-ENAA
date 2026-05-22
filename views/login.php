@@ -10,7 +10,7 @@
 <body  class="bg-gray-100 flex items-center justify-center h-screen">
 
     <form action="login.php" method="POST" class="bg-white p-8 rounded-2xl shadow-lg w-96">
-        <h1 class="text-2xl font-bold text-center mb-6">Se connecter</h1>
+        <h1 class="text-2xl font-bold text-center mb-6">Connexion</h1>
         <div class="mb-4">
                   <label class="block mb-2 text-gray-700"> Email</label>
                   <input
@@ -30,6 +30,14 @@
                 class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
         </div>
+
+        <button
+            type="submit"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition"
+        >
+            Se connecter
+        </button>
+
     </form>
 </body>
 </html>

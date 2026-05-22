@@ -10,6 +10,12 @@ $db = DB::getConnection();
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$sql = "SELECT * FROM users WHERE email = ?";
+
+$stmt = $db->prepare($sql);
+
+$stmt->execute([$email]);
+
 
 ?>
 <!DOCTYPE html>

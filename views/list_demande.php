@@ -33,7 +33,11 @@ $demandes = $repository->findAll();
 </head>
 <body>
     <h1 class="text-2xl font-bold mb-6">Liste des demandes</h1>
+     <p>Bonjour <?= $_SESSION['nom'] ?></p>
+     <p>Role : <?= $_SESSION['role'] ?></p>
     <div class="grid gap-4">
+
+    <p>Bonjour <?= $_SESSION['nom'] ?></p>
 
     <?php foreach($demandes as $demande):?>
         <div class="bg-white shadow-md rounded-xl p-4 border border-gray-200">>

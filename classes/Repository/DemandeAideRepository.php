@@ -23,7 +23,7 @@ class DemandeAideRepository{
                   $demandeAide->getDescription(),
                   $demandeAide->getStatut()->value,
                   $demandeAide->getApprenant_id(),
-                  $demandeAide->getTiteur_id()
+                  $demandeAide->getTuteur_id()
               ]) ;   
 
     }
@@ -90,12 +90,21 @@ class DemandeAideRepository{
 
     }
 
-    public function update(DemandeAide $demandeAide ):bool{
-        $sql= "UPDATE demandeAide SET statut=?,
-               tuteur_id=?
-               where id=?";
-        $stmt=$this->db->prepare($sql);
-        return $stmt->execute([$demandeAide->getStatut()->value,$demandeAide->getTiteur_id(),$demandeAide->getId()]);
+    public function update(DemandeAide $demandeAide): bool
+    {
+        $sql = "
+           UPDATE demandeAide
+           SET statut = ?, tuteur_id = ?
+           WHERE id = ?
+           ";
+
+        $stmt = $this->db->prepare($sql);
+
+           return $stmt->execute([
+           $demandeAide->getStatut()->value,
+           $demandeAide->getTuteur_id(),
+           $demandeAide->getId()
+           ]);
     }
 
 }

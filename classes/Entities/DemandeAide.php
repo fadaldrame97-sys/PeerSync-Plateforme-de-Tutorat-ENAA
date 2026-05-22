@@ -39,7 +39,7 @@ class DemandeAide{
      public function getApprenant_id(): int{
         return $this->apprenant_id;
      }
-     public function getTiteur_id():? int{
+     public function getTuteur_id():? int{
         return $this->tuteur_id;
 
      }

@@ -5,7 +5,7 @@ class PointFort{
     private int $userID;
     private int $competenceID;
 
-    public function __construct(int $id,int $userID,$competenceID){
+    public function __construct(int $id,int $userID, int $competenceID){
         $this->id=$id;
         $this->userID=$userID;
         $this->competenceID=$competenceID;

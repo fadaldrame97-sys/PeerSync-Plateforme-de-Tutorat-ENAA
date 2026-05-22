@@ -29,4 +29,25 @@ class CompetenceRepository
 
         return $competences;
     }
+
+        public function findById(int $id): ?Competence
+    {
+        $sql = "SELECT * FROM competences WHERE id = ?";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute([$id]);
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(!$data) {
+            return null;
+        }
+
+        return new Competence(
+            (int)$data['id'],
+            $data['nom']
+        );
+    }
+
 }    

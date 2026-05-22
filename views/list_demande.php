@@ -50,7 +50,7 @@ $demandes = $repository->findAll();
                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Accepter</a>
 
                 <!-- Bouton résoudre -->
-               <a href="resoudre_demande.php?id=<?= $demande->getId() ?>"
+               <a href="ressoudre_demande.php?id=<?= $demande->getId() ?>"
                class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"> Résoudre</a>
 
             </div>

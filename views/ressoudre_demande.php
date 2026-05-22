@@ -6,3 +6,5 @@ $db= DB::getConnection();
 $repo= new DemandeAideRepository($db);
 
 $id=(int) $_GET['id'];
+//Créer un objet DemandeAide avec titre vide et description vide
+$demande= new DemandeAide($id,"","",Statut::RESOLUE,0,null);

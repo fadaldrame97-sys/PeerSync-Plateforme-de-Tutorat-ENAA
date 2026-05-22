@@ -37,10 +37,10 @@ $demandes = $repository->findAll();
      <p>Role : <?= $_SESSION['role'] ?></p>
     <div class="grid gap-4">
 
-    <p>Bonjour <?= $_SESSION['nom'] ?></p>
+   
 
     <?php foreach($demandes as $demande):?>
-        <div class="bg-white shadow-md rounded-xl p-4 border border-gray-200">>
+        <div class="bg-white shadow-md rounded-xl p-4 border border-gray-200">
            <h3 class="text-lg font-semibold text-gray-800"><?= $demande->getTitre() ?></h3>
 
            <p class="text-gray-600 mt-2"><?= $demande->getDescription() ?></p>
@@ -56,13 +56,19 @@ $demandes = $repository->findAll();
             </span>
             <div class="mt-4 flex gap-2">
 
-                <!-- Bouton accepter -->
+              <?php if ($demande->getStatut()->value === 'ouverte'): ?>
                <a href="accepter_demande.php?id=<?= $demande->getId() ?>"
-                class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Accepter</a>
+                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">
+                 Accepter
+               </a>
+              <?php endif; ?>
 
-                <!-- Bouton résoudre -->
-               <a href="ressoudre_demande.php?id=<?= $demande->getId() ?>"
-               class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"> Résoudre</a>
+              <?php if ($demande->getStatut()->value === 'acceptee'): ?>
+                <a href="resoudre_demande.php?id=<?= $demande->getId() ?>"
+                 class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded">
+                  Résoudre
+                </a>
+               <?php endif; ?>
 
             </div>
 

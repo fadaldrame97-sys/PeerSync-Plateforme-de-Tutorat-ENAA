@@ -7,7 +7,7 @@ $repo= new DemandeAideRepository($db);
 
 $id=(int) $_GET['id'];
 
-$tuteurID=1;
+$_SESSION['user_id'];
 //Créer un objet DemandeAide avec titre vide et description vide
 $demande= new DemandeAide($id,"","",Statut::ACCEPTEE,0,$tuteurID);
 

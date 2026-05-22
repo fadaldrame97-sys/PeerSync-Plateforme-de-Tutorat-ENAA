@@ -9,7 +9,7 @@ $id=(int) $_GET['id'];
 
 $tuteurID=1;
 //Créer un objet DemandeAide avec titre vide et description vide
-$demande= new DemandeAide($id,"","",Statut::RESOLUE,0,null);
+$demande= new DemandeAide($id,"","",Statut::RESOLUE,0,$tuteurID);
 
 $repo->update($demande);
 

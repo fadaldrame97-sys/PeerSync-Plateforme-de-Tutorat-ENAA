@@ -9,6 +9,14 @@
 </head>
 <body  class="bg-gray-100 flex items-center justify-center h-screen">
 
-    <form action="login.php" method="POST" class="bg-white p-8 rounded-2xl shadow-lg w-96"></form>
+    <form action="login.php" method="POST" class="bg-white p-8 rounded-2xl shadow-lg w-96">
+        <h1 class="text-2xl font-bold text-center mb-6">Se connecter</h1>
+        <div class="mb-4">
+                  <label class="block mb-2 text-gray-700"> Email</label>
+                  <input
+                  type="email"name="email"required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+        </div>
+    </form>
 </body>
 </html>

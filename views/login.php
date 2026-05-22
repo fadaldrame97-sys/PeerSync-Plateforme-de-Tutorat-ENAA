@@ -1,3 +1,17 @@
+<?php
+
+
+session_start();
+
+require_once "../config/db.php";
+
+$db = DB::getConnection();
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

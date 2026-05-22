@@ -49,6 +49,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body  class="bg-gray-100 flex items-center justify-center h-screen">
 
+    <?php if($message): ?>
+
+        <p class="text-red-500 mb-4 text-center"> <?= $message ?></p>
+
+    <?php endif; ?>
     <form action="login.php" method="POST" class="bg-white p-8 rounded-2xl shadow-lg w-96">
         <h1 class="text-2xl font-bold text-center mb-6">Connexion</h1>
         <div class="mb-4">

@@ -48,12 +48,12 @@ class DemandeAide{
             throw new Exception("Impossible de s'assigner soit-meme");
         }
         $this->tuteur_id=$tuteur_id;
-       $this->statut = Statut::ASSIGNED;
+       $this->statut = Statut::ACCEPTEE;
 
      }
 
      public function resolu():void{
-        $this->statut = Statut::RESOLVED;
+        $this->statut = Statut::RESOLUE;
      }
 
      public function getStatut(): Statut {

@@ -9,4 +9,19 @@ class PointFaibleRepository
     {
         $this->db = $db;
     }
+
+public function add(PointFaible $pointFaible): bool
+{
+    $sql = "
+        INSERT INTO point_faibles(user_id, competence_id)
+        VALUES (?, ?)
+    ";
+
+    $stmt = $this->db->prepare($sql);
+
+    return $stmt->execute([
+        $pointFaible->getUserId(),
+        $pointFaible->getCompetenceId()
+    ]);
+}    
 }

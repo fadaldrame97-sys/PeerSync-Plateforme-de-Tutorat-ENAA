@@ -7,6 +7,7 @@ require_once "../config/db.php";
 require_once "../classes/Entities/Competence.php";
 require_once "../classes/Repository/CompetenceRepository.php";
 
+
 require_once "../classes/Repository/PointFortRepository.php";
 require_once "../classes/Repository/PointFaibleRepository.php";
 
@@ -64,9 +65,13 @@ $competences = $competenceRepo->findAll();
 
         <ul class="list-disc ml-6">
             <?php foreach($forts as $f): ?>
-                <li>
-                    Compétence ID : <?= $f->getCompetenceID() ?>
-                </li>
+        <?php
+        $competence = $competenceRepo->findById($f->getCompetenceID());
+         ?>
+
+        <li>
+        <?= $competence?->getNom() ?>
+        </li>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -79,9 +84,13 @@ $competences = $competenceRepo->findAll();
 
         <ul class="list-disc ml-6">
             <?php foreach($faibles as $f): ?>
-                <li>
-                    Compétence ID : <?= $f->getCompetenceId() ?>
-                </li>
+                <?php
+                 $competence = $competenceRepo->findById($f->getCompetenceId());
+                 ?>
+
+                 <li>
+                 <?= $competence?->getNom() ?>
+                 </li>
             <?php endforeach; ?>
         </ul>
     </div>

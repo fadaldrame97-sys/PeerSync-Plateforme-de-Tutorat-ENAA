@@ -2,8 +2,7 @@
 
 session_start();
 
-var_dump($_SESSION);
-die();
+
 
 require_once "../config/db.php";
 

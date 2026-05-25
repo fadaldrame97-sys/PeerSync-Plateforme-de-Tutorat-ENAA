@@ -39,6 +39,7 @@ $topTuteurs = $repo->topTuteurs();
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 p-10">
+    <?php require_once "navbar.php"; ?>
 
     
 

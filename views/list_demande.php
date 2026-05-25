@@ -31,6 +31,7 @@ $demandes = $repository->findAll();
 
 </head>
 <body>
+    <?php require_once "navbar.php"; ?>
     <h1 class="text-2xl font-bold mb-6">Liste des demandes</h1>
      <p>Bonjour <?= $_SESSION['nom'] ?></p>
      <p>Role : <?= $_SESSION['role'] ?></p>

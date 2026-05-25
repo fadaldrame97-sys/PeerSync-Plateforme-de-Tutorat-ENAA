@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -34,73 +35,44 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donner un avis</title>
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <?php require_once "navbar.php"; ?>
+    
 
-     <?php
 
-session_start();
 
-require_once "../config/db.php";
-require_once "../classes/Entities/Review.php";
-require_once "../classes/Repository/ReviewRepository.php";
+    <h1>Donner un avis</h1>
 
-$db = DB::getConnection();
-$repo = new ReviewRepository($db);
+<   p><?= $message ?></p>
 
-$demandeId = (int) $_GET['id'];
+    <form method="POST">
 
-$message = "";
+        <input type="hidden" name="tuteur_id" value="4">
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        <label>Note (1-5)</label>
+        <input type="number" name="note" min="1" max="5" required>
 
-    $note = (int) $_POST['note'];
-    $commentaire = $_POST['commentaire'];
+        <br><br>
 
-    $review = new Review(
-        0,
-        $demandeId,
-        $_SESSION['user_id'],
-        $_POST['tuteur_id'],
-        $note,
-        $commentaire
-    );
+        <label>Commentaire</label>
+        <textarea name="commentaire"></textarea>
 
-    if($repo->add($review)){
-        $message = "Review ajoutée";
-    } else {
-        $message = "Erreur";
-    }
-}
-?>
+        <br><br>
+ 
+    <   button type="submit">Envoyer</button>
 
-<h1>Donner un avis</h1>
-
-<p><?= $message ?></p>
-
-<form method="POST">
-
-    <input type="hidden" name="tuteur_id" value="4">
-
-    <label>Note (1-5)</label>
-    <input type="number" name="note" min="1" max="5" required>
-
-    <br><br>
-
-    <label>Commentaire</label>
-    <textarea name="commentaire"></textarea>
-
-    <br><br>
-
-    <button type="submit">Envoyer</button>
-
-</form>
+    </form>
     
 </body>
 </html>

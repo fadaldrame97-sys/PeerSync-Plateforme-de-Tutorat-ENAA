@@ -35,8 +35,19 @@ $topTuteurs = $repo->topTuteurs();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-100 p-10">
+
+    
+
+    <h1 class="text-3xl font-bold mb-8">Dashboard Admin</h1>
+
+    <div class="grid grid-cols-2 gap-6 mb-10">
+ 
+       <div class="bg-white p-6 rounded-xl shadow">
+         <h2 class="text-xl font-semibold">Total demandes</h2>
     
 </body>
 </html>

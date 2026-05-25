@@ -50,5 +50,25 @@ class AdminRepository
 
         return (int)$this->db->query($sql)->fetchColumn();
     }
+        public function topTuteurs(): array
+    {
+        $sql = "
+            SELECT users.nom, COUNT(demandeAide.id) as total
+            FROM demandeAide
+
+            JOIN users
+            ON users.id = demandeAide.tuteur_id
+
+            WHERE demandeAide.statut = 'resolue'
+
+            GROUP BY users.nom
+
+            ORDER BY total DESC
+        ";
+
+        $stmt = $this->db->query($sql);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }

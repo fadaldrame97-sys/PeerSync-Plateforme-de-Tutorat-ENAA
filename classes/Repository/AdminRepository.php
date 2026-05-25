@@ -29,7 +29,7 @@ class AdminRepository
         return (int)$this->db->query($sql)->fetchColumn();
     }
         // Nombre tuteurs
-    public function countTuteurs(): int
+    public function NombreTuteurs(): int
     {
         $sql = "
             SELECT COUNT(*)
@@ -39,4 +39,16 @@ class AdminRepository
 
         return (int)$this->db->query($sql)->fetchColumn();
     }
+     // Nombre apprenants
+    public function NombreApprenants(): int
+    {
+        $sql = "
+            SELECT COUNT(*)
+            FROM users
+            WHERE role = 'apprenant'
+        ";
+
+        return (int)$this->db->query($sql)->fetchColumn();
+    }
+
 }

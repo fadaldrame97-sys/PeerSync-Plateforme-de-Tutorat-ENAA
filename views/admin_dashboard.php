@@ -48,6 +48,10 @@ $topTuteurs = $repo->topTuteurs();
  
        <div class="bg-white p-6 rounded-xl shadow">
          <h2 class="text-xl font-semibold">Total demandes</h2>
+         <p class="text-3xl mt-4">
+            <?= $totalDemandes ?>
+        </p>
+    </div>
     
 </body>
 </html>

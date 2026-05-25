@@ -52,6 +52,12 @@ $topTuteurs = $repo->topTuteurs();
             <?= $totalDemandes ?>
         </p>
     </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold">Demandes résolues</h2>
+        <p class="text-3xl mt-4"><?= $totalResolved ?></p>
+    </div>
+
     
 </body>
 </html>

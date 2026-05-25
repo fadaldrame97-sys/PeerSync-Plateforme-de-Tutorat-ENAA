@@ -60,6 +60,24 @@ $topTuteurs = $repo->topTuteurs();
         <h2 class="text-xl font-semibold">Apprenants</h2>
         <p class="text-3xl mt-4"><?= $totalApprenants ?></p>
        </div>
+    </div>
+
+ <div class="bg-white p-6 rounded-xl shadow">
+
+    <h2 class="text-2xl font-bold mb-4">Top Tuteurs</h2>
+
+    <ul class="space-y-2">
+
+        <?php foreach($topTuteurs as $tuteur): ?>
+
+            <li class="border p-3 rounded"> <?= $tuteur['nom'] ?>- <?= $tuteur['total'] ?> demandes résolues </li>
+
+        <?php endforeach; ?>
+
+    </ul>
+
+ </div>
+
 
     
 </body>

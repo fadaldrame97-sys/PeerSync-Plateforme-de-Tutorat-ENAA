@@ -13,3 +13,17 @@ if(!isset($_SESSION['user_id'])){
 if($_SESSION['role'] !== 'admin'){
     die("Accès refusé");
 }
+
+$db = DB::getConnection();
+
+$repo = new AdminRepository($db);
+
+$totalDemandes = $repo->countDemandes();
+
+$totalResolved = $repo->countResolved();
+
+$totalTuteurs = $repo->NombreTuteurs();
+
+$totalApprenants = $repo->NombreApprenants();
+
+$topTuteurs = $repo->topTuteurs();

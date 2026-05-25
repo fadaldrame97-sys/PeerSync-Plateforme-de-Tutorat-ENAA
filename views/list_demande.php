@@ -73,6 +73,13 @@ $demandes = $repository->findAll();
 
         </div>
     </div>
+
+    <?php if($demande->getStatut()->value === 'resolue'): ?>
+    <a href="ajouter_review.php?id=<?= $demande->getId() ?>"
+       class="bg-purple-500 text-white px-3 py-1 rounded">
+        Laisser un avis
+    </a>
+    <?php endif; ?>
     
     <?php endforeach ?>   
    

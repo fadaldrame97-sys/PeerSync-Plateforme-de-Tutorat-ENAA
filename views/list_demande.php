@@ -73,7 +73,8 @@ $demandes = $repository->findAll();
                 </a>
             <?php endif; ?>
 
-            <?php if ($demande->getStatut()->value === 'acceptee'): ?>
+           <?php if (
+                $demande->getStatut()->value === 'resolue' && $demande->getApprenantId() === $_SESSION['user_id']): ?>
                 <a href="ressoudre_demande.php?id=<?= $demande->getId() ?>"
                    class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded">
                     Résoudre

@@ -69,8 +69,38 @@ $tuteurs = $repo->getTuteurs();
         <p class="text-3xl mt-4"><?= $totalApprenants ?></p>
        </div>
     </div>
+    <div class="bg-white p-6 rounded-xl shadow mt-8">
 
- <div class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-bold mb-4">Apprenants</h2>
+
+      <?php foreach($apprenants as $a): ?>
+
+        <div class="border p-3 rounded mb-2"><?= $a['nom'] ?>   </div>
+
+       <?php endforeach; ?>
+
+     </div>
+
+
+     <div class="bg-white p-6 rounded-xl shadow mt-8">
+
+        <h2 class="text-2xl font-bold mb-4">
+        Tuteurs
+       </h2>
+
+        <?php foreach($tuteurs as $t): ?>
+
+           <div class="border p-3 rounded mb-2">
+            <?= $t['nom'] ?> - <?= $t['email'] ?>
+            </div>
+
+       <?php endforeach; ?>
+
+    </div>
+
+
+
+    <div class="bg-white p-6 rounded-xl shadow">
 
     <h2 class="text-2xl font-bold mb-4">Top Tuteurs</h2>
 

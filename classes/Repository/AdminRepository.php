@@ -72,7 +72,28 @@ class AdminRepository
     }
 
     public function getApprenant(){
-        
+
+         $sql=" 
+             Select* from users 
+             WHERE role='apprenant'
+         ";
+
+             $stmt = $this->db->query($sql);
+
+             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     }
+    public function getTuteurs(): array
+    {
+             $sql = "
+             SELECT *
+             FROM users
+             WHERE role = 'tuteur'
+    ";
+
+            $stmt = $this->db->query($sql);
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+          }
 
 }

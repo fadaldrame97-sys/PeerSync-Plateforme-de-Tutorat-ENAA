@@ -61,6 +61,16 @@ $competences = $competenceRepo->findAll();
         Rôle : <?= $_SESSION['role'] ?>
     </p>
 
+    <a href="ajouter_competence_forte.php"
+   class="bg-green-500 text-white px-4 py-2 rounded">
+    Ajouter point fort
+</a>
+
+<a href="ajouter_competence_faible.php"
+   class="bg-red-500 text-white px-4 py-2 rounded ml-2">
+    Ajouter point faible
+</a>
+
     <!-- POINTS FORTS -->
     <div class="mb-6">
         <h2 class="text-xl font-semibold text-green-600 mb-2">

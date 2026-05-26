@@ -32,6 +32,10 @@ $topTuteurs = $repo->topTuteurs();
 $apprenants = $repo->getApprenant();
 
 $tuteurs = $repo->getTuteurs();
+
+$compatibilites = $repo->getCompatibilites();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +101,33 @@ $tuteurs = $repo->getTuteurs();
        <?php endforeach; ?>
 
     </div>
+
+     
+     <div class="bg-white p-6 rounded-xl shadow mt-8">
+
+    <h2 class="text-2xl font-bold mb-4">
+        Compatibilités
+    </h2>
+
+    <?php foreach($compatibilites as $c): ?>
+
+        <div class="border p-3 rounded mb-2">
+
+            <?= $c['apprenant'].'  '.'apprenant'; ?>
+
+            ↔
+
+            <?= $c['tuteur']." ".'Titeur'; ?>
+
+            (<?= $c['competence'] ?>)
+
+        </div>
+
+    <?php endforeach; ?>
+
+</div>
+      
+    
 
 
 

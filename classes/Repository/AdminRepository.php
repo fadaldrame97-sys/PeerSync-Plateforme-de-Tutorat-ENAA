@@ -89,11 +89,42 @@ class AdminRepository
              SELECT *
              FROM users
              WHERE role = 'tuteur'
-    ";
+           ";
 
             $stmt = $this->db->query($sql);
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-          }
+    }
+
+    public function getCompatibilites(): array
+    {
+        $sql = "
+            SELECT
+
+            apprenant.nom AS apprenant,
+            tuteur.nom AS tuteur,
+            competences.nom AS competence
+
+             FROM point_faibles
+
+             JOIN users AS apprenant
+             ON apprenant.id = point_faibles.user_id
+
+            JOIN point_forts
+             ON point_forts.competence_id = point_faibles.competence_id
+
+             JOIN users AS tuteur
+             ON tuteur.id = point_forts.user_id
+
+            JOIN competences
+             ON competences.id = point_forts.competence_id
+
+            WHERE apprenant.id != tuteur.id
+            ";
+
+        $stmt = $this->db->query($sql);
+
+         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }

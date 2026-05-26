@@ -28,6 +28,10 @@ $totalTuteurs = $repo->NombreTuteurs();
 $totalApprenants = $repo->NombreApprenants();
 
 $topTuteurs = $repo->topTuteurs();
+
+$apprenants = $repo->getApprenant();
+
+$tuteurs = $repo->getTuteurs();
 ?>
 
 <!DOCTYPE html>

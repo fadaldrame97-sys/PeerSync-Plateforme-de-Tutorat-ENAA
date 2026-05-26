@@ -127,4 +127,29 @@ class AdminRepository
          return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getReviews(): array
+    {
+    $sql = "
+        SELECT
+            reviews.note,
+            reviews.commentaire,
+            tuteur.nom AS tuteur,
+            apprenant.nom AS apprenant
+
+        FROM reviews
+
+        JOIN users AS tuteur
+        ON tuteur.id = reviews.tuteur_id
+
+        JOIN users AS apprenant
+        ON apprenant.id = reviews.apprenant_id
+
+        ORDER BY reviews.id DESC
+    ";
+
+    $stmt = $this->db->query($sql);
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+     }
+
 }

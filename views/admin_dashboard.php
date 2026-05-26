@@ -35,6 +35,8 @@ $tuteurs = $repo->getTuteurs();
 
 $compatibilites = $repo->getCompatibilites();
 
+$reviews = $repo->getReviews();
+
 
 ?>
 
@@ -124,6 +126,38 @@ $compatibilites = $repo->getCompatibilites();
         </div>
 
     <?php endforeach; ?>
+
+
+
+    <div class="bg-white p-6 rounded-xl shadow mt-8">
+
+    <h2 class="text-2xl font-bold mb-4">
+        Avis des apprenants
+    </h2>
+
+    <?php foreach($reviews as $review): ?>
+
+        <div class="border p-4 rounded mb-4">
+
+            <p class="font-bold">
+                <?= $review['apprenant'] ?>
+                →
+                <?= $review['tuteur'] ?>
+            </p>
+
+            <p>
+                Note : <?= $review['note'] ?>/5
+            </p>
+
+            <p class="text-gray-600">
+                <?= $review['commentaire'] ?>
+            </p>
+
+        </div>
+
+    <?php endforeach; ?>
+
+</div>
 
 </div>
       

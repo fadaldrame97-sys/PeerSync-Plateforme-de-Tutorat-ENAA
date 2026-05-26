@@ -44,9 +44,11 @@ $competences = $competenceRepo->findAll();
     <title>Profil</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
+    
 </head>
 
 <body class="bg-gray-100 p-10">
+
     <?php require_once "navbar.php"; ?>
 
 <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow">

@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="style.css">
 </head>
 <body  class="bg-gray-100 flex items-center justify-center h-screen">
-    <?php require_once "navbar.php"; ?>
+    
 
     <?php if($message): ?>
 

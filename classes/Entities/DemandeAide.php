@@ -43,6 +43,10 @@ class DemandeAide{
         return $this->tuteur_id;
 
      }
+     public function getStatut(): Statut
+     {
+        return $this->statut;
+     }
      public function assignTo(Tuteur $tuteur): void
      {
        if ($this->apprenant_id === $tuteur->getId()) {

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once __DIR__ . "/navbar.php";
 
 require_once "../config/db.php";
 require_once "../classes/Repository/AdminRepository.php";
@@ -39,6 +40,8 @@ $topTuteurs = $repo->topTuteurs();
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 p-10">
+ 
+
     <?php require_once "navbar.php"; ?>
 
     
@@ -82,4 +85,7 @@ $topTuteurs = $repo->topTuteurs();
 
     
 </body>
+
+
+
 </html>

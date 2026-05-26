@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body>
     <?php require_once "navbar.php"; ?>
+    
     <h1>Créer une demande d'aide</h1>
 
     <p><?= $message ?></p>
